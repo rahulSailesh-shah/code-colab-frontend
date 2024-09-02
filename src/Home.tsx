@@ -16,12 +16,14 @@ export default function Home() {
 
   const handleCreateRoom = async () => {
     try {
-      const response = await fetch(`${SERVER_URL}/contest`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://livecode-colaborator.onrender.com/contest",
+        {
+          method: "POST",
+          redirect: "follow",
+        }
+      );
+
       if (response.ok) {
         const { id } = await response.json();
         const userId = Date.now().toString(36);
