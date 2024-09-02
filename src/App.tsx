@@ -8,6 +8,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* Protected Route */}
         <Route path="/room/:id/:userId" element={<CodeEditor />} />
       </Routes>
     </BrowserRouter>
